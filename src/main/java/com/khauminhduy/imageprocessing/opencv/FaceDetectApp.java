@@ -1,4 +1,4 @@
-package com.khauminhduy.opencv;
+package com.khauminhduy.imageprocessing.opencv;
 
 import nu.pattern.OpenCV;
 

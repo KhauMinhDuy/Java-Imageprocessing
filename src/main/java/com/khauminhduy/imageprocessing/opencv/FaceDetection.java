@@ -1,4 +1,4 @@
-package com.khauminhduy.opencv;
+package com.khauminhduy.imageprocessing.opencv;
 
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
