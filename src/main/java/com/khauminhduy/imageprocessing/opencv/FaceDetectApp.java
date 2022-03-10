@@ -4,9 +4,10 @@ import nu.pattern.OpenCV;
 
 public class FaceDetectApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		OpenCV.loadShared();
-		FaceDetection.detectFace("b.jpg", "output2.jpg");
+		FaceDetection.detectFace("g.jpg", "output3.jpg");
+		System.out.println("Done");
 	}
 	
 }
