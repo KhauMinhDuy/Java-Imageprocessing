@@ -16,11 +16,11 @@ public class FaceDetection {
 	public static Mat loadImage(String imagePath) {
 		return Imgcodecs.imread(imagePath);
 	}
-	
+
 	public static void saveImage(Mat imageMatrix, String targetPath) {
 		Imgcodecs.imwrite(targetPath, imageMatrix);
 	}
-	
+
 	public static void detectFace(String sourceImagePath, String targetImagePath) throws InterruptedException {
 		Thread.sleep(1000);
 		VideoCapture capture = new VideoCapture(0);
@@ -51,6 +51,11 @@ public class FaceDetection {
 		int i = 1;
 		int scaleSize = 40;
 		for(Rect face : facesArray) {
+			System.out.println("FaceY : " + face.y);
+			System.out.println("FaceHeight : " + face.height);
+			System.out.println("FaceX : " + face.x);
+			System.out.println("FaceWidth : " + face.width);
+			System.out.println(face);
 			Mat submat = loadedImage.submat(face.y - scaleSize, face.y + face.height + scaleSize, face.x - scaleSize, face.x + face.width + scaleSize);
 			Imgcodecs.imwrite(i++ + "_"+ face.width + "_" + face.height + ".jpg", submat);
 		}
@@ -65,5 +70,5 @@ public class FaceDetection {
 		
 		saveImage(loadedImage, targetImagePath);
 	}
-	
+
 }
